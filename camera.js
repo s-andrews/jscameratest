@@ -24,7 +24,20 @@ $( document ).ready(function() {
 function read_barcode() {
     $("#capturebarcode").hide();
 
-    write_barcode("15326533");
+    let data = new FormData();
+
+    data.append('image',$("#photo").attr("src"));
+
+    $.ajax({
+        type: "POST",
+        url: "cgi-bin/backend.py",
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function(result) {
+            write_barcode(result)
+        }
+    });
     
 }
 
