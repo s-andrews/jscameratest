@@ -12,20 +12,20 @@
 <div>
     <h2>Read Barcode</h2>
     <input type="text" name="barcode" id="barcode"></input>
+    <button id="snap">Capture Barcode</button>
 </div>
 
 <div id="capturebarcode">
-    <div class="camera">
-        <video id="video">Video stream not available.</video>
+    <div id="videodiv">
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <img id="photo" alt="The screen capture will appear in this box.">
+        </div>
         <button id="startbutton">Take photo</button>
+
+        <canvas id="canvas"></canvas>
+        </div>
     </div>
-
-
-    <canvas id="canvas"></canvas>
-    <div class="output">
-    <img id="photo" alt="The screen capture will appear in this box.">
-    </div>
-
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
