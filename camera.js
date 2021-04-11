@@ -7,6 +7,33 @@ let canvas = null;
 let startbutton = null;
 let photo = null;
 
+let input_to_fill = null;
+
+$( document ).ready(function() {
+    startup()
+    $("#capturebarcode").hide();
+    $("#snap").click(function(){
+        input_to_fill = $(this).prev("input");
+        $("#capturebarcode").show();
+    })
+
+    $("#startbutton").click(read_barcode);
+
+});
+
+function read_barcode() {
+    $("#capturebarcode").hide();
+
+    write_barcode("15326533");
+    
+}
+
+
+function write_barcode(code) {
+    input_to_fill.val(code);
+    input_to_fill = null;
+}
+
 function startup() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
@@ -66,4 +93,3 @@ function takepicture() {
     }
 }
 
-window.addEventListener('load', startup, false);

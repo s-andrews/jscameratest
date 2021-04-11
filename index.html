@@ -3,22 +3,32 @@
 
 <head>
     <title>Camera test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<h1>Camera test</h1>
+<h1>My Test Page</h1>
 
-<div class="camera">
-    <video id="video">Video stream not available.</video>
-    <button id="startbutton">Take photo</button>
+<div>
+    <h2>Read Barcode</h2>
+    <input type="text" name="barcode" id="barcode"></input>
 </div>
 
+<div id="capturebarcode">
+    <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+    </div>
 
-<canvas id="canvas"></canvas>
-<div class="output">
-  <img id="photo" alt="The screen capture will appear in this box.">
+
+    <canvas id="canvas"></canvas>
+    <div class="output">
+    <img id="photo" alt="The screen capture will appear in this box.">
+    </div>
+
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="camera.js"></script>
 </body>
 
